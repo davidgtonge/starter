@@ -1,6 +1,6 @@
 {
-  "name": "cloud-cover",
-  "version": "0.1.0",
+  "name": "starter",
+  "version": "1.0.0",
   "private": true,
   "devDependencies": {
     "react-scripts": "^2.1.8"
