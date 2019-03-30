@@ -1,16 +1,16 @@
-import R from "ramda"
+import {always} from "ramda"
 import createReducer from "./helpers/create-reducer"
 
 // Types
 const RESET = "RESET"
 
 // Action Creators
-export const reset = R.always({type:RESET, payload:{}})
+export const reset = always({type: RESET, payload: {}})
 
 // Reducer
 const initialState = {}
 
-const handleReset = R.always(initialState)
+const handleReset = always(initialState)
 
 export const reducer = createReducer(initialState, {
   [RESET]: handleReset,

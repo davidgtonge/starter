@@ -1,11 +1,11 @@
-import R from "ramda"
+import {is, always, T, cond, reduce} from "ramda"
 
 const createReducer = (initialState, spec) => {
   return (state = initialState, action) => {
-    return R.cond([
-      [R.is(Array), R.reduce((_state, fn) => fn(_state, action), state)],
-      [R.is(Function), (fn) => fn(state, action)],
-      [R.T, R.always(state)],
+    return cond([
+      [is(Array), reduce((_state, fn) => fn(_state, action), state)],
+      [is(Function), fn => fn(state, action)],
+      [T, always(state)],
     ])(spec[action.type])
   }
 }
